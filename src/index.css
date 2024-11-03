@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --hover-color: #ffc107;
+  --header-bg-light: #bab9ba;
+  --header-bg-dark: #000000;
+  --toggle-bg-light: #898589;
+  --toggle-bg-dark: #4e4e4e;
+  --toggle-inner-light: #0f5c4f;
+  --toggle-inner-dark: #ffffff;
+  --light-background: #FFFDD0;
+  --dark-background: #343a40;
+  --sidebar-bg-light: #004d40;
+  --sidebar-bg-dark: #000000;
+  --search-bg: #ffffff;
+  --search-bg-dark: #495057;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark and Light Modes */
+.dark-mode {
+  background: var(--dark-background);
+  color: #fff;
+}
+
+.light-mode {
+  background-color: var(--light-background);
+  color: #000;
+}

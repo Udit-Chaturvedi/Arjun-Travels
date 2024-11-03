@@ -1,0 +1,222 @@
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100% - 60px);
+  width: 250px;
+  color: white;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  z-index: 9;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.sidebar.light-mode {
+  background: var(--sidebar-bg-light);
+}
+
+.sidebar.dark-mode {
+  background: var(--sidebar-bg-dark);
+}
+
+.user-info {
+  padding-left: 5px;
+}
+
+/* Add other styles here from the original CSS file */
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  /* Positioned below the header */
+  left: 0;
+  height: calc(100% - 60px);
+  /* Full height minus header */
+  width: 250px;
+  /* Default width for large screens */
+  color: white;
+  padding-top: 20px;
+  /* Space from header */
+  transition: width 0.3s ease;
+  z-index: 9;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+}
+
+.sidebar.light-mode {
+  background: var(--sidebar-bg-light);
+}
+
+.sidebar.dark-mode {
+  background: var(--sidebar-bg-dark);
+}
+
+/* Hide scrollbar for Webkit browsers */
+.sidebar::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar width */
+  background: transparent;
+  /* Optional: change background color */
+}
+
+/* Hide scrollbar for Firefox */
+.sidebar {
+  scrollbar-width: none;
+  /* Remove scrollbar width */
+}
+
+/* Hide scrollbar for IE and Edge */
+.sidebar {
+  -ms-overflow-style: none;
+  /* Remove scrollbar */
+}
+
+/* Hamburger Menu (for small screens) */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-menu .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #09b2b8;
+  transition: transform 0.3s;
+}
+
+/* Hamburger menu open state */
+.hamburger-menu .bar.open {
+  transform: rotate(45deg);
+  /* Rotate bars when open */
+}
+
+.hamburger-menu .bar.open:nth-child(2) {
+  opacity: 0;
+  /* Hide the middle bar */
+}
+
+.hamburger-menu .bar.open:nth-child(3) {
+  transform: rotate(-45deg);
+  /* Rotate third bar */
+}
+
+.user-info {
+  padding-left: 5px;
+}
+
+/* Search Bar Styles */
+.search-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--search-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.search-bar .search-icon {
+  padding: 10px;
+  background: var(--hover-color);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  border-radius: 20px;
+}
+
+.search-bar .search-icon:hover {
+  transform: scale(1.1);
+  background: #ffca2c;
+  /* Lighter hover color */
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar-menu li:hover,
+.sidebar-menu li:active {
+  background-color: #495057;
+  /* Highlight on hover or active */
+  color: var(--hover-color);
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 15px;
+}
+
+.sub-menu li {
+  padding: 5px 10px;
+}
+
+/* Focus Styles */
+.sidebar-menu li:focus {
+  outline: 3px solid var(--hover-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 750px) {
+  .sidebar {
+    width: 0;
+    /* Sidebar is collapsed on small screens */
+    padding-top: 70px;
+  }
+
+  .sidebar.open {
+    width: 250px;
+    /* Sidebar expands when open */
+  }
+
+  /* Display hamburger menu on small screens */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* Adjust sidebar content padding for small screens */
+  .sidebar .user-info,
+  .sidebar .search-container {
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1200px) {
+  .sidebar {
+    width: 250px;
+    /* Slightly wider for medium screens */
+  }
+}
+
+@media (min-width: 1201px) {
+  .sidebar {
+    width: 250px;
+    /* Maintain width for larger screens */
+  }
+}
+
+

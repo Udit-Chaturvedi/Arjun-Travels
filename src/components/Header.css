@@ -1,0 +1,114 @@
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header.light-mode {
+  background: var(--header-bg-light);
+}
+
+.header.dark-mode {
+  background: var(--header-bg-dark);
+}
+
+.header-logo img {
+  height: 50px;
+  /* Adjust size as necessary */
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-icon {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.message-icon {
+  color: #f4f000;
+}
+
+.notification-icon {
+  color: #d70b0b;
+}
+
+.user-icon {
+  color: #1010dd;
+}
+
+.message-icon:hover,
+.message-icon:active {
+  transform: scale(1.1);
+  background-color: #a88807;
+}
+
+.notification-icon:hover,
+.notification-icon:active {
+  transform: scale(1.1);
+  background-color: #540505ec;
+}
+
+.user-icon:hover,
+.user-icon:active {
+  transform: scale(1.1);
+  background-color: #040438ee;
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  width: 50px;
+  height: 27px;
+  border-radius: 50px;
+  background-color: var(--toggle-bg-light);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.toggle-button.active {
+  background-color: var(--toggle-bg-dark);
+  justify-content: flex-end;
+}
+
+.toggle-button-inner {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--toggle-inner-light);
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+.toggle-button.active .toggle-button-inner {
+  background-color: var(--toggle-inner-dark);
+  transform: translateX(0);
+}
+
+@media (min-width: 340px) and (max-width: 380px) {
+  .header-icons {
+    gap: 6px;
+  }
+}
